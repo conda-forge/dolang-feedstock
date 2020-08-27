@@ -1,18 +1,18 @@
 {% set name = "dolang" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.10" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: de602c48c7b4b6809b8b450cb4a2e3b45408ba372e656f182b93d4508467f2e4
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: fa4bbdf6a634fab55b0531df8dc07677cfce3fd48680a3908c8aff7cc91b832b
 
 build:
-  number: 2
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -39,7 +39,7 @@ about:
   # as it will be part of the source distribution
   # cf: https://github.com/EconForge/dolang.py/issues/3
   license_file: COPYING
-  summary: "Dolo Modeling Language"
+  summary: Dolo Modeling Language
 
 extra:
   recipe-maintainers:
