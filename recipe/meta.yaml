@@ -1,5 +1,5 @@
 {% set name = "dolang" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.14" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,16 +7,16 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: de602c48c7b4b6809b8b450cb4a2e3b45408ba372e656f182b93d4508467f2e4
+  sha256: 644631042d684ccba3a0e814354c1f109b1900f89d0420791deb20f41d5bb865
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - pip ==20.0.2
+    - pip ==20.1
     - python >=3.7
     - poetry
   run:
