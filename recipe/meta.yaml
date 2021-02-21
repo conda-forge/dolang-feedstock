@@ -10,13 +10,13 @@ source:
   sha256: 644631042d684ccba3a0e814354c1f109b1900f89d0420791deb20f41d5bb865
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - pip ==20.1
+    - pip ==21.0.1
     - python >=3.7
     - poetry
   run:
