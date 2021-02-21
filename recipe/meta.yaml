@@ -10,7 +10,7 @@ source:
   sha256: 644631042d684ccba3a0e814354c1f109b1900f89d0420791deb20f41d5bb865
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -24,7 +24,9 @@ requirements:
     - numpy >=1.18.1
     - python >=3.7
     - sympy >=1.5.1
+    - pyyaml >=5.3.1
     - tempita >=0.5.2
+    - lark-parser >=0.11.2
 
 test:
   imports:
