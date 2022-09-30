@@ -1,5 +1,5 @@
 {% set name = "dolang" %}
-{% set version = "0.0.15" %}
+{% set version = "0.0.18" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 35909460ddc92b9b9414b76e7d7f8166494ec1da64d9a7b121a7be68239c4e69
+  sha256: c68450cfb2ca629b38a738a188e0e7e79125c0c9a2f30493030ef4bd87ee6e4c
 
 build:
   number: 0
