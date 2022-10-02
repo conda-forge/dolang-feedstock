@@ -1,5 +1,5 @@
 {% set name = "dolang" %}
-{% set version = "0.0.15" %}
+{% set version = "0.0.18" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 35909460ddc92b9b9414b76e7d7f8166494ec1da64d9a7b121a7be68239c4e69
+  sha256: c68450cfb2ca629b38a738a188e0e7e79125c0c9a2f30493030ef4bd87ee6e4c
+  patches: 
+    - fix_poetry.patch
 
 build:
   number: 0
@@ -16,17 +18,16 @@ build:
 
 requirements:
   host:
-    - pip ==21.0.1
-    - python >=3.7
+    - pip ==22.2.2
+    - python >=3.8,<3.11
     - poetry
   run:
-    - numba >=0.48.0
-    - numpy >=1.18.1
-    - python >=3.7
-    - sympy >=1.5.1
+    - numba >=0.55.0
+    - numpy >=1.22.2
+    - python >=3.8
+    - sympy >=1.11.1
     - pyyaml >=5.3.1
-    - tempita >=0.5.2
-    - lark-parser >=0.11.2
+    - lark >=1.1.2
 
 test:
   imports:
