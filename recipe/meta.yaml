@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 54473c343d57a84f687a95e01bef1204bb759e69106fbbe7078a796d708f56da
-  patches: 
-    - fix_poetry.patch
 
 build:
   number: 0
@@ -18,7 +16,7 @@ build:
 
 requirements:
   host:
-    - pip ==22.2.2
+    - pip
     - python >=3.8,<3.11
     - poetry
   run:
