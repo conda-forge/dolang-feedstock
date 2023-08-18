@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c68450cfb2ca629b38a738a188e0e7e79125c0c9a2f30493030ef4bd87ee6e4c
+  sha256: 54473c343d57a84f687a95e01bef1204bb759e69106fbbe7078a796d708f56da
   patches: 
     - fix_poetry.patch
 
