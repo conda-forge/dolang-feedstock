@@ -1,13 +1,13 @@
 {% set name = "dolang" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.20" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: de602c48c7b4b6809b8b450cb4a2e3b45408ba372e656f182b93d4508467f2e4
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 54473c343d57a84f687a95e01bef1204bb759e69106fbbe7078a796d708f56da
 
 build:
   number: 1
@@ -19,14 +19,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python >=3.8,<3.11
     - poetry
   run:
-    - numba >=0.49.0
-    - numpy >=1.16
-    - python >=3.7
-    - sympy >=1.5
-    - tempita >=0.5.2
+    # numba is now an optional dependency
+    # - numba >=0.57.1
+    - numpy >=1.22.2
+    - python >=3.8, <3.12
+    - sympy >=1.11.1
+    - pyyaml >=6.0
+    - lark >=1.1.2
 
 test:
   imports:
@@ -41,7 +43,7 @@ about:
   # as it will be part of the source distribution
   # cf: https://github.com/EconForge/dolang.py/issues/3
   license_file: COPYING
-  summary: "Dolo Modeling Language"
+  summary: Dolo Modeling Language
 
 extra:
   recipe-maintainers:
