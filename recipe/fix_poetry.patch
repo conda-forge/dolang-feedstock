@@ -1,0 +1,13 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 084ceba..9ffc961 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -14,7 +14,7 @@ sympy = "^1.11.1"
+ lark = "^1.1.2"
+ pytest = "^7.1.3"
+ 
+-[tool.poetry.group.dev.dependencies]
++[tool.poetry.dev-dependencies]
+ black = "^22.8.0"
+ pyyaml = "^5.3.1"
+ pylint = "^2.6.0"
