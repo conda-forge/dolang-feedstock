@@ -10,7 +10,7 @@ source:
   sha256: d4e83883a66ac2dd3d73c5998165b7c57b6fb09725633de7e308ad5ec28c04c5
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
   always_include_files:
@@ -19,18 +19,20 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8,<3.11
+    - python {{ python_min }}
     - poetry
   run:
     # numba is now an optional dependency
     # - numba >=0.57.1
     - numpy >=1.22.2
-    - python >=3.8, <3.12
+    - python >={{ python_min }},<3.14
     - sympy >=1.11.1
     - pyyaml >=6.0
     - lark >=1.1.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - dolang
     - dolang.tests
